@@ -1,0 +1,23 @@
+header {
+  background-color: lightsalmon;
+  color: black;
+  padding: 0 0 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  display: inline;
+}
+
+button {
+  background-color: lightyellow;
+  border-width: 0 0.5px;
+  border-color: black;
+  padding: 9.5px 32px;
+  float: right;
+  font-size: 12pt;
+}
+
+button:hover {
+  background-color: rgb(250, 250, 200);
+}

@@ -1,0 +1,17 @@
+body {
+  margin: auto;
+  min-width: 800px;
+  max-width: 1200px;
+}
+
+#projectTitle {
+  text-align: center;
+  background-color: lightseagreen;
+  padding: 15px;
+  margin: 0;
+  border-top-width: 0;
+}
+
+footer {
+  margin-top: 20px;
+}

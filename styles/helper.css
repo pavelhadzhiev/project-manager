@@ -1,0 +1,5 @@
+.bordered {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: black;
+}
