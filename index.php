@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/tasks.css">
   </head>
   <body>
-    <header class="bordered">
+    <header id="boardHeader" class="bordered">
       <nav>
         <div class="navBar">
           <h1 id="navBarTitle"> Project Management </h1>
@@ -28,7 +28,19 @@
       </nav>
 
     </header>
-    <h2 class ="projectTitle bordered" id="projectTitle"> Choose a Project </h2>
+    <div id="userGreeting" class="bordered">
+      <p> 
+        <?php 
+        session_start();
+        if (isset($_SESSION['user'])) {
+          echo 'Greetings, <i>'.$_SESSION['user'].'</i>! Enjoy your project planning.';
+        } else {
+          echo "Hello, stranger. Please either login or register!";
+        }
+        ?>
+      </p>
+    </div>
+    <h2 id="projectTitle" class="bordered"> Choose a Project </h2>
   
     <div class="tasksContent">
       <div class="taskHeaders">
@@ -56,16 +68,6 @@
         </ul>
       </div>
     </div>
-    <p> 
-      <?php 
-      session_start();
-      if (isset($_SESSION['user'])) {
-        echo 'Hello, '.$_SESSION['user'].'!';
-      } else {
-        echo "You are not logged in!";
-      }
-      ?>
-    </p>
 
     <footer>My footer</footer>
     <?php include 'php/db.php';?>
