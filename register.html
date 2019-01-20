@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Registration View </title>
+    <link href="styles/form.css" rel="stylesheet" type="text/css">
+    <script src="js/closeableForm.js"></script>
+    <script src="js/validation/register.js"></script>
+	</head>
+	<body>
+    <div class="formStyle">
+      <h1> Registration Form </h1>
+      <form id="registerForm" method="post" action="" onsubmit="return registerValidation()">
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <input type="password" placeholder="Repeat password" name="repeatPassword">
+
+        <input type="submit" value="Register" name="register">
+      </form>
+    </div>
+  </body>
+</html>

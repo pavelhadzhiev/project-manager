@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Login View </title>
+    <link href="styles/form.css" rel="stylesheet" type="text/css">
+    <script src="js/closeableForm.js"></script>
+    <script src="js/validation/login.js"></script>
+	</head>
+	<body>
+    <div class="formStyle">
+      <h1> Login Form </h1>
+      <form id="loginForm" method="POST" action="" onsubmit="return loginValidation()">
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+
+        <input type="submit" value="Login" name="login">
+      </form>
+    </div>
+	</body>
+</html>

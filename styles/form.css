@@ -1,0 +1,50 @@
+body {
+	margin: 0;
+}
+
+.formStyle {
+	width: 400px;
+}
+
+.formStyle h1 {
+	border: 1px solid black;
+	background-color: lightsalmon;
+	text-align: center;
+	padding: 10px;
+	margin: 0;
+	font-size: 22pt;
+}
+
+.formStyle input, .formStyle select {
+	background-color: rgb(250,250,200);
+    width: 320px;
+    padding: 10px;
+    border: 1px solid black;
+	font-size: 12pt;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 40px;
+}
+
+.formStyle select {
+	width: 340px;	
+	height: 40px;
+}
+
+.formStyle::placeholder {
+	color: dimgray;
+}
+
+.formStyle input[type=submit] {
+	width: 340px;
+	background: lightsalmon;
+	margin-bottom: 15px;
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+.formStyle form {
+	background-color: lightyellow;
+	border: 1px solid black;
+	border-top: 0px
+}
