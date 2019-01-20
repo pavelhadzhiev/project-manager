@@ -56,6 +56,16 @@
         </ul>
       </div>
     </div>
+    <p> 
+      <?php 
+      session_start();
+      if (isset($_SESSION['user'])) {
+        echo 'Hello, '.$_SESSION['user'].'!';
+      } else {
+        echo "You are not logged in!";
+      }
+      ?>
+    </p>
 
     <footer>My footer</footer>
     <?php include 'php/db.php';?>

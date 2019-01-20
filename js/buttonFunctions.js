@@ -1,21 +1,21 @@
 function openRegisterView() {
-  window.open('register.html','popup','width=400,height=420');
+  window.location.href='registerForm.php';
 }
 
 function openLoginView() {
-  window.open('login.html','popup','width=400,height=340');
+  window.location.href='loginForm.php';
 }
 
 function logout() {
-
+  window.location.href='php/logout.php';
 }
 
 function openTaskView() {
-  window.open('task.html','popup','width=400,height=500');
+  window.open('taskForm.php','popup','width=400,height=500');
 }
 
 function openProjectView() {
-  window.open('project.html','popup','width=400,height=260');
+  window.open('projectForm.php','popup','width=400,height=260');
 }
 
 function toggleProjectDropdown() {

@@ -5,6 +5,7 @@
     <link href="styles/form.css" rel="stylesheet" type="text/css">
     <script src="js/closeableForm.js"></script>
     <script src="js/validation/register.js"></script>
+    <?php include 'php/register.php';?>
 	</head>
 	<body>
     <div class="formStyle">
@@ -15,6 +16,18 @@
         <input type="password" placeholder="Repeat password" name="repeatPassword">
 
         <input type="submit" value="Register" name="register">
+        <p> 
+          <?php 
+          if (isset($registered)) {
+            if($registered) {
+              echo "Successfully registered, ".$_SESSION['user']."!";
+              echo "<script> window.location.href='index.php'; </script>";
+            } else {
+              echo $error;
+            }
+          }
+          ?> 
+        </p>
       </form>
     </div>
   </body>
