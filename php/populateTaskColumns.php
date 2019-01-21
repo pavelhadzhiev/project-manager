@@ -1,10 +1,10 @@
 <?php
+    include 'sqlConfig.php';
+
     if (!isset($_SESSION)) {
         session_start();
     }
     
-    $db = new PDO('mysql:host=localhost;dbname=FMI;charset=utf8', 'root', '');
-
     $toDoTasksHtml = '';
     $inProgressTasksHtml = '';
     $forReviewTasksHtml = '';
