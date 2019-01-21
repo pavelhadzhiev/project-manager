@@ -5,6 +5,7 @@
     <link href="styles/form.css" rel="stylesheet" type="text/css">
     <script src="js/closeableForm.js"></script>
     <script src="js/validation/task.js"></script>
+    <?php include 'php/submitTask.php';?>
 	</head>
 	<body>
     <div class="formStyle">
@@ -28,6 +29,13 @@
         <input type="text" placeholder="Description" name="description">
 
         <input type="submit" value="Submit Task" name="submitTask">
+
+        <?php 
+          if (isset($submittedTask)) {
+            echo "Successfully submitted task \"".$submittedTask."\" to project \"".$_SESSION['project']."\"!";
+            echo "<script> window.location.href='index.php'; </script>";
+          } 
+        ?>
       </form>
     </div>
   </body>

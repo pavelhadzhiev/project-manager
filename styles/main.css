@@ -6,13 +6,13 @@ body {
 
 #userGreeting {
   width: 100%;
+  height: 30px;
   text-align: center;
-  font-size: 18pt;
-  padding: 10px 0px;
-  background-color: lightsalmon;
+  font-size: 14pt;
   font-weight: bold;
   border-top-width: 0;
   box-sizing: border-box;
+  background-color: lightsalmon;
 }
 
 #projectTitle {
@@ -21,9 +21,5 @@ body {
   padding: 15px;
   margin: 0;
   border-top-width: 0;
-  font-size: 24pt;
-}
-
-footer {
-  margin-top: 20px;
+  font-size: 20pt;
 }

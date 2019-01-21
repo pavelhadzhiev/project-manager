@@ -21,26 +21,17 @@
           <button class="left" id="taskButton" onclick ="return openTaskView()"> Submit Task </button>
         </div>
         <div class="projectList">
-          <button class="dropbutton"> C4C Extension Service </button>
-          <button class="dropbutton"> My Web Project </button>
-          <button class="dropbutton"> My Golang Project</button>
+          <?php include 'php/chooseProject.php'; ?>
         </div>
       </nav>
 
     </header>
     <div id="userGreeting" class="bordered">
-      <p> 
-        <?php 
-        session_start();
-        if (isset($_SESSION['user'])) {
-          echo 'Greetings, <i>'.$_SESSION['user'].'</i>! Enjoy your project planning.';
-        } else {
-          echo "Hello, stranger. Please either login or register!";
-        }
-        ?>
-      </p>
+      <?php include 'php/greetUser.php'?>
     </div>
-    <h2 id="projectTitle" class="bordered"> Choose a Project </h2>
+    <h2 id="projectTitle" class="bordered"> 
+      <?php include 'php/selectedProject.php'; ?>
+    </h2>
   
     <div class="tasksContent">
       <div class="taskHeaders">
@@ -50,26 +41,22 @@
           <h3 id="done" class="taskHeader bordered">Done</h3>
       </div>
       <div class="taskColumns">
+        <?php include 'php/populateTaskColumns.php'; ?>
         <ul id="toDoTasks" class="taskColumn bordered">
-          <li class="task bordered"> Task 1 - Some task</li>
-          <li class="task bordered"> Task 2 - One with a very very long description </li>
+          <?php echo $toDoTasksHtml ?>
         </ul>
         <ul id="inProgressTasks" class="taskColumn bordered">
-          <li class="task bordered"> Task 1 - Some task </li>
-          <li class="task bordered"> Task 2 - One with a very very long description </li>
+          <?php echo $inProgressTasksHtml ?>
         </ul>
         <ul id="forReviewTasks" class="taskColumn bordered">
-          <li class="task bordered"> Task 1 - Some task </li>
-          <li class="task bordered"> Task 2 - One with a very very long description </li>
+          <?php echo $forReviewTasksHtml ?>
         </ul>
         <ul id="doneTasks" class="taskColumn bordered">
-          <li class="task bordered"> Task 1 - Some task </li>
-          <li class="task bordered"> Task 2 - One with a very very long description </li>
+          <?php echo $doneTasksHtml ?>
         </ul>
       </div>
     </div>
 
-    <footer>My footer</footer>
     <?php include 'php/db.php';?>
     <script src="js/buttonFunctions.js"></script>
   </body>

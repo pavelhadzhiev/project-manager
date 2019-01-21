@@ -11,11 +11,11 @@ function logout() {
 }
 
 function openTaskView() {
-  window.open('taskForm.php','popup','width=400,height=500');
+  window.location.href='taskForm.php';
 }
 
 function openProjectView() {
-  window.open('projectForm.php','popup','width=400,height=260');
+  window.location.href='projectForm.php';
 }
 
 function toggleProjectDropdown() {
@@ -39,6 +39,10 @@ function hideDropdown() {
   }
 }
 
+function selectProject() {
+
+}
+
 // Hide project dropdown list initially
 toggleProjectDropdown();
 
@@ -46,8 +50,12 @@ toggleProjectDropdown();
 var markClass = 'dropdown-button';
 document.getElementById('chooseProjectButton').classList.add(markClass);
 
-// Set up event handler to hide dropdown list on clicks outside it
+// Set up event handler to hide dropdown list on clicks outside of it
+// And to select the specific project on clicks in the dropdown list
 window.onclick = function(event) {
+  if(event.target.matches(".project")){
+    window.location.href='index.php?project=' + event.target.innerHTML.trim();
+  }
   if(!event.target.matches("." + markClass)){
     hideDropdown();
   }

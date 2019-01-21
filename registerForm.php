@@ -16,7 +16,7 @@
         <input type="password" placeholder="Repeat password" name="repeatPassword">
 
         <input type="submit" value="Register" name="register">
-        <p> 
+        <p>
           <?php 
           if (isset($registered)) {
             if($registered) {

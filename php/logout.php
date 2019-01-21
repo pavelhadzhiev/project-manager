@@ -1,10 +1,11 @@
 <?php
-session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
 
-if (isset($_SESSION['user'])) {
-    unset($_SESSION['user']);
-}
+    if (isset($_SESSION['user'])) {
+        unset($_SESSION['user']);
+    }
 
-echo "<script> window.location.href='../index.php'; </script>";
-
+    echo "<script> window.location.href='../index.php'; </script>";
 ?>
