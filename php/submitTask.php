@@ -10,8 +10,8 @@
         $type = $_POST['type'];
         $priority = $_POST['priority'];
         $description = $_POST['description'];
+        $status = $_POST['status'];
         $projectName = $_SESSION['project'];
-        $status = 'toDo';
 
         $insertProjectSql = "INSERT INTO tasks (title, type, priority, description, projectName, status) VALUES (?, ?, ?, ?, ?, ?)";
         $insertProjectStmt = $db->prepare($insertProjectSql);

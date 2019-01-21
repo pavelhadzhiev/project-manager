@@ -9,10 +9,10 @@
     $fetchAllQuery = $db->query($fetchAll) or die("failed!");
     $tasks = $fetchAllQuery->fetchAll();
 
-    $toDoTasksHtml = "";
-    $inProgressTasksHtml = "";
-    $forReviewTasksHtml = "";
-    $doneTasksHtml = "";
+    $toDoTasksHtml = '<ul id="toDoTasks" class="taskColumn bordered">';
+    $inProgressTasksHtml = '<ul id="inProgressTasks" class="taskColumn bordered">';
+    $forReviewTasksHtml = '<ul id="forReviewTasks" class="taskColumn bordered">';
+    $doneTasksHtml = '<ul id="doneTasks" class="taskColumn bordered">';
     foreach ($tasks as $value) {
         $htmlString = "<li class='task bordered'> Task ".$value['id']." - ".$value['title']."</li>";
         switch ($value['status']) {
@@ -30,4 +30,9 @@
                 break;
         }
     }
+
+    $toDoTasksHtml .= '</ul>';
+    $inProgressTasksHtml .= '</ul>';
+    $forReviewTasksHtml .= '</ul>';
+    $doneTasksHtml .= '</ul>';
 ?>

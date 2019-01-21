@@ -6,7 +6,8 @@ body {
 
 #userGreeting {
   width: 100%;
-  height: 30px;
+  height: 40px;
+  padding: 10px;
   text-align: center;
   font-size: 14pt;
   font-weight: bold;

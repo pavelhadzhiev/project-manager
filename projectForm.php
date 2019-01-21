@@ -3,7 +3,7 @@
 	<head>
 		<title> Project View </title>
     <link href="styles/form.css" rel="stylesheet" type="text/css">
-    <script src="js/closeableForm.js"></script>
+    <link href="styles/helper.css" rel="stylesheet" type="text/css">
     <script src="js/validation/project.js"></script>
     <?php include 'php/createProject.php';?>
 	</head>
@@ -14,18 +14,23 @@
         <input type="text" placeholder="Project Name" name="name">
 
         <input type="submit" value="Create Project" name="createProject">
-        <p> 
+        
+        <?php 
+          if (isset($createdProject) && $createdProject) {
+            echo "Successfully created project \"".$_SESSION['project']."\"!";
+            echo "<script> window.location.href='index.php'; </script>";
+          }
+        ?>
+        <div class="errors">
           <?php 
-            if (isset($createdProject)) {
-              if($createdProject) {
-                echo "Successfully created project \"".$_SESSION['project']."\"!";
-                echo "<script> window.location.href='index.php'; </script>";
-              } else {
-                echo $error;
-              }
+            if (isset($createdProject) && !$createdProject) {
+              echo "<ul class='errorList bordered'>
+                      <li class='error'> $error </li>
+                    </ul>";
             }
-          ?> 
-        </p>
+          ?>
+        </div>
+
       </form>
     </div>
   </body>

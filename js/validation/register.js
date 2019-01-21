@@ -1,20 +1,33 @@
+var validationErrors;
+var validInput;
+
 function registerValidation() {
-    var elements = document.getElementById("registerForm").elements;
+    var elements = document.getElementById('registerForm').elements;
     var username = elements['username'].value;
     var password = elements['password'].value;
     var repeatPassword = elements['repeatPassword'].value;
+    validationErrors = '<ul class="errorList bordered">';
+    validInput = true;
 
-    if (username == "") {
-        alert("Username is empty!");
-        return false;
+    if (username == '') {
+        addError('Username is empty!');
     }
-    if (password == "") {
-        alert("Password is empty!");
-        return false;
+    if (password == '') {
+        addError('Password is empty!');
     }
     if (password !== repeatPassword) {
-        alert("Passwords do not match!");
+        addError('Passwords do not match!');
+    }
+    if (!validInput) {
+        validationErrors += '</ul>';
+        document.getElementsByClassName('errors')[0].innerHTML = validationErrors;
         return false;
     }
+
     return true;
+}
+
+function addError(error) {
+    validationErrors += '<li class="error">' + error + '</li>';
+    validInput = false;
 }

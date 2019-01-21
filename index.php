@@ -35,29 +35,22 @@
   
     <div class="tasksContent">
       <div class="taskHeaders">
-          <h3 id="toDo" class="taskHeader bordered">To Do</h3>
-          <h3 id="inProgress" class="taskHeader bordered">In Progress</h3>
-          <h3 id="forReview" class="taskHeader bordered">For Review</h3>
-          <h3 id="done" class="taskHeader bordered">Done</h3>
+          <h3 class="taskHeader bordered" id="toDoHeader"> To Do </h3>
+          <h3 class="taskHeader bordered" id="inProgressHeader"> In Progress </h3>
+          <h3 class="taskHeader bordered" id="forReviewHeader"> For Review </h3>
+          <h3 class="taskHeader bordered" id="doneHeader"> Done </h3>
       </div>
       <div class="taskColumns">
-        <?php include 'php/populateTaskColumns.php'; ?>
-        <ul id="toDoTasks" class="taskColumn bordered">
-          <?php echo $toDoTasksHtml ?>
-        </ul>
-        <ul id="inProgressTasks" class="taskColumn bordered">
-          <?php echo $inProgressTasksHtml ?>
-        </ul>
-        <ul id="forReviewTasks" class="taskColumn bordered">
-          <?php echo $forReviewTasksHtml ?>
-        </ul>
-        <ul id="doneTasks" class="taskColumn bordered">
-          <?php echo $doneTasksHtml ?>
-        </ul>
+        <?php
+          include 'php/populateTaskColumns.php';
+          echo $toDoTasksHtml.
+               $inProgressTasksHtml.
+               $forReviewTasksHtml.
+               $doneTasksHtml;
+        ?>
       </div>
     </div>
 
-    <?php include 'php/db.php';?>
     <script src="js/buttonFunctions.js"></script>
   </body>
 </html>

@@ -8,7 +8,7 @@
     if (isset($_POST['createProject'])) {
         $name = $_POST['name'];
 
-        $fetchByName = "SELECT * FROM projects where name='".$name."'";
+        $fetchByName = "SELECT * FROM projects where name='$name'";
         $fetchByNameQuery = $db->query($fetchByName) or die("failed!");
         $user = $fetchByNameQuery->fetch(PDO::FETCH_ASSOC);
 

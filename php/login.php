@@ -9,7 +9,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $fetchByUsername = "SELECT * FROM users where username='".$username."'";
+        $fetchByUsername = "SELECT * FROM users where username='$username'";
         $fetchByUsernameQuery = $db->query($fetchByUsername) or die("failed!");
         $user = $fetchByUsernameQuery->fetch(PDO::FETCH_ASSOC);
 

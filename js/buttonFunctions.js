@@ -39,10 +39,6 @@ function hideDropdown() {
   }
 }
 
-function selectProject() {
-
-}
-
 // Hide project dropdown list initially
 toggleProjectDropdown();
 

@@ -3,7 +3,7 @@
 	<head>
 		<title> Login View </title>
     <link href="styles/form.css" rel="stylesheet" type="text/css">
-    <script src="js/closeableForm.js"></script>
+    <link href="styles/helper.css" rel="stylesheet" type="text/css">
     <script src="js/validation/login.js"></script>
     <?php include 'php/login.php';?>
 	</head>
@@ -15,18 +15,22 @@
         <input type="password" placeholder="Password" name="password">
 
         <input type="submit" value="Login" name="login">
-        <p> 
-          <?php 
-          if (isset($loggedIn)) {
-            if($loggedIn) {
-              echo "Successfully logged in, ".$_SESSION['user']."!";
-              echo "<script> window.location.href='index.php'; </script>";
-            } else {
-              echo $error;
-            }
+
+        <?php 
+          if (isset($loggedIn) && $loggedIn) {
+            echo "Successfully logged in, ".$_SESSION['user']."!";
+            echo "<script> window.location.href='index.php'; </script>";
           }
-          ?> 
-        </p>
+        ?>
+        <div class="errors">
+          <?php 
+            if (isset($loggedIn) && !$loggedIn) {
+              echo "<ul class='errorList bordered'>
+                      <li class='error'> $error </li>
+                    </ul>";
+            }
+          ?>
+        </div>
       </form>
     </div>
 	</body>
